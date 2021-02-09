@@ -1,20 +1,16 @@
 import React from 'react'
-import Container from 'react-bootstrap/Container'
-import Jumbotron from 'react-bootstrap/Jumbotron'
+import { ThemeProvider } from 'styled-components'
+
+import Home from 'sections/Home'
+import theme from 'styles/theme'
+import GlobalStyle from 'styles/globalStyle'
 
 const App: React.FC = () => {
   return (
-    <Container>
-      <Jumbotron className="mt-5">
-        <h1>
-          CRA TypeScript Bootstrap Template{' '}
-          <span role="img" aria-label="rocket emoji">
-            🚀
-          </span>
-        </h1>
-        <p>Ready to roll !</p>
-      </Jumbotron>
-    </Container>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Home />
+    </ThemeProvider>
   )
 }
 
